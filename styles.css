@@ -2,29 +2,29 @@ body {
     background: #0c0b21 none repeat scroll 0 0;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
+    width: 100%;
     letter-spacing: 1.5px;
     line-height: 30px;
+    width: 100%;
+
 }
 
 .header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
 }
 
 .header-top {
     display: flex;
-    justify-content: space-around;
-    width: 114rem;
+    width: 100%;
 }
 
 .header-bottom {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    width: 110rem;
+    padding-top: 20px;
+    width: 100%;
 }
 
 .logo {
@@ -34,9 +34,12 @@ body {
 }
 
 .nav {
-    margin: auto;
+    width: 100%;
     display: inline-block;
+    margin-left: 200px;
+    margin-right: 200px;
 }
+
 
 .nav-list {
     display: inline-block;
@@ -120,6 +123,56 @@ body {
     display: block;
 }
 
+.nav-item-responsive {
+    height: 30px;
+    position: relative;
+    display: none;
+}
+
+.nav-icon {
+    height: 100%;
+}
+
+.nav-responsive-list {
+    color: white;
+    background-color: #0c0b21;
+    position: absolute;
+    left: -100px;
+    top: 30px;
+    list-style: none;
+    z-index: 1;
+    display: none;
+}
+
+.nav-responsive-list-item {
+    margin-right: 50px;
+}
+
+.nav-responsive-item-dropdown {
+    color: gold;
+    background-color: #0c0b21;
+    position: relative;
+    width: 200px;
+    margin-left: 20px;
+    z-index: 1;
+    display: none;
+}
+
+.nav-responsive-item-dropdown a {
+    display: flex;
+}
+
+.nav-responsive-item-dropdown-column {
+    color: greenyellow;
+    margin-left: 30px;
+    z-index: 1;
+    display: none;
+}
+
+.nav-responsive-item-dropdown-column a {
+    display: flex;
+}
+
 .user {
     background-color: #ff1744;
     color: white;
@@ -139,8 +192,6 @@ body {
 
 .promo {
     color: white;
-    float: left;
-    height: 42px;
     cursor: pointer;
 
 }
@@ -156,6 +207,8 @@ body {
     height: 42px;
     line-height: 40px;
     position: relative;
+    margin-right: 140px;
+    margin-left: 140px;
 }
 
 .category {
@@ -179,7 +232,6 @@ body {
     border-right-width: 1px;
     color: white;
     width: 500px;
-    padding-left: 5px;
 }
 
 .search-content:focus {
@@ -211,21 +263,22 @@ body {
     cursor: pointer;
 }
 
-.slider-box {
+.slider {
     position: relative;
     background-color: black;
+    width: 100%;
 }
 
 .slider-image {
     position: relative;
     opacity: 0.4;
-    height: 100%;
+    width: 100%;
 }
 
 .welcome1 {
     color: red;
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 21%;
     right: 21%;
     font-size: 36px;
@@ -238,7 +291,7 @@ body {
 .welcome2 {
     color: white;
     position: absolute;
-    top: 31%;
+    top: 21%;
     left: 21%;
     right: 21%;
     font-size: 60px;
@@ -252,7 +305,7 @@ body {
 .welcome-content {
     color: white;
     position: absolute;
-    top: 38%;
+    top: 28%;
     left: 30%;
     right: 30%;
     font-size: 16px;
@@ -272,7 +325,7 @@ body {
     line-height: 40px;
     cursor: pointer;
     position: absolute;
-    bottom: 45%;
+    bottom: 50%;
     left: 40%;
     padding: 3px 30px 3px 30px;
 }
@@ -292,7 +345,7 @@ body {
     line-height: 40px;
     cursor: pointer;
     position: absolute;
-    bottom: 45%;
+    bottom: 50%;
     right: 40%;
     padding: 3px 30px 3px 30px;
 }
@@ -300,4 +353,126 @@ body {
 .details:hover {
     background-color: #ff1744;
     color: white;
+}
+
+@media screen and (max-width: 1700px) {
+    
+    .welcome2 {
+        top: 22%;
+    }
+
+    .welcome-content {
+        top: 31%;
+    }
+
+    .more {
+        bottom: 45%;
+        left: 38%;
+    }
+    
+    .details {
+        bottom: 45%;
+        right: 38%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    
+    .welcome2 {
+        top: 22%;
+    }
+
+    .welcome-content {
+        top: 33%;
+    }
+
+    .more {
+        bottom: 40%;
+        left: 34%;
+    }
+    
+    .details {
+        bottom: 40%;
+        right: 34%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+
+    .nav-item {
+        display: none;
+    }
+
+    .nav-item-responsive {
+        display: block;
+        top: -30px;
+        margin-left: 200px;
+        cursor: pointer;
+    }
+
+    .nav-item-responsive:hover .nav-responsive-list {
+        display: inline-block;
+    }
+
+    .nav-responsive-list-item:hover {
+        color: #ff1744;
+    }
+
+    .nav-responsive-list-item:hover .nav-responsive-item-dropdown {
+        display: inline-block;
+    }
+
+    .nav-responsive-item-dropdown a:hover {
+        color: #ff1744;
+    }
+
+    .nav-responsive-item-dropdown:hover .nav-responsive-item-dropdown-column {
+        display: inline-block;
+    }
+
+    .nav-responsive-item-dropdown-column a:hover {
+        color: #ff1744;
+    }
+
+    .search-input {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+    .search-content {
+        width: 100px;
+    }
+
+    .welcome2 {
+        top: 24%;
+    }
+
+    .welcome-content {
+        top: 37%;
+    }
+
+    .more {
+        bottom: 34%;
+        left: 34%;
+    }
+    
+    .details {
+        bottom: 34%;
+        right: 34%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+
+    .more {
+        bottom: 25%;
+        left: 34%;
+    }
+    
+    .details {
+        bottom: 25%;
+        right: 34%;
+    }
+
 }
