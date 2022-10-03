@@ -5,7 +5,7 @@
 body {
     background: purple;
     font-size: 40px;
-    padding: 2%;
+    height: 100%;
 }
 
 .responsive-navbar {
@@ -24,6 +24,27 @@ body {
     height: 60%;
     padding-left: 20px;
     
+}
+
+.responsive-navbar-list {
+    
+    
+    background-color: gold;
+    align-items: left;  
+    padding-left: 0;
+    z-index: 1;
+    display: none; 
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+}
+
+.responsive-navbar-list-item {
+    display: block;
+    color: black;
+    padding: 5%;
+
 }
 
 .navbar {
@@ -280,11 +301,6 @@ body {
     .responsive-navbar {
         display: flex;
     }
-
-    .responsive-navbar:hover {
-        background-color: orange;
-        color: #fff;
-    }
     
     .navbar a {
         display: none;
@@ -439,6 +455,25 @@ body {
 
     .slider h2 {
         font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .responsive-navbar:hover {
+        width: 100%;
+        position: fixed;
+        margin-top: -8px;
+        margin-left: -8px;
+    }
+
+    .responsive-navbar-list-item:hover {
+        color: orange;
+    }
+
+    .responsive-navbar:hover .responsive-navbar-list {
+        display: flex;
+        flex-direction: column;
     }
 
 
