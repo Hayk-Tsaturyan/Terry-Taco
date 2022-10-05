@@ -5,36 +5,61 @@
 body {
     background: purple;
     font-size: 40px;
-    padding: 2%;
-}
-
-.responsive-navbar {
-    background-color: gold;
-    height: 40px;
-    width: 120px;
-    display: none;
-}
-
-.responsive-navbar-item {
-    font-size: 25px;
-    padding: 10px 0 0 3px;
-}
-
-.responsive-navbar-item img {
-    height: 60%;
-    padding-left: 20px;
-    
+    height: 100%;
 }
 
 .navbar {
+    margin-bottom: 10px;
+}
+
+.navbar-hamb-item{
+    padding: 20px 20px;
+    display: none;
+}
+
+.navbar-hamb-line {
+    background-color: black;
+    display: block;
+    height: 5px;
+    width: 30px;
+    position: relative;
+    left: -15px;
+    top: -3px;
+    
+}
+
+.navbar-hamb-line::before,
+.navbar-hamb-line::after{
+    background: black;
+    content: '';
+    height: 5px;
+    display: block;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 30px;
+}
+
+.navbar-hamb-line::before{
+    top: 10px;
+}
+
+.navbar-hamb-line::after{
+    top: -10px;
+}
+
+.menu {
+    display: none;
+}
+
+.navbar-items {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     text-align: center;
-    margin-bottom: 3%;
+    width: 100%;
 }
 
-.navbar a {
+.navbar-items a {
     color: black;
     background-color: gold;
     width: 19%;
@@ -44,7 +69,7 @@ body {
     min-width: fit-content;
 }
 
-.navbar a:hover {
+.navbar-items a:hover {
     background-color: orange;
     color: #fff;
 }
@@ -277,16 +302,15 @@ body {
 }
 
 @media screen and (max-width: 1050px) {
-    .responsive-navbar {
-        display: flex;
+
+    .navbar-hamb-item {
+        display: block;
+        height: 40px;
+        width: 40px;
+        background-color: gold;
     }
 
-    .responsive-navbar:hover {
-        background-color: orange;
-        color: #fff;
-    }
-    
-    .navbar a {
+    .navbar-items {
         display: none;
     }
 
@@ -441,5 +465,43 @@ body {
         font-size: 12px;
     }
 
+}
 
+@media screen and (max-width: 425px) {
+    .menu:checked ~ .navbar-hamb-item {
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        margin-left: -8px;
+        margin-top: -10px;
+    }
+    
+    .menu:checked ~ .navbar-items {
+        display: flex;
+        flex-direction: column;
+        background-color: gold;
+        width: 100%;
+        min-height: 100%;
+        position: fixed;
+        top: 50px;
+        margin-left: -8px;
+        justify-content: unset;
+        padding-left: 15px;
+    }
+    
+    .menu:checked ~ .navbar-hamb-item .navbar-hamb-line {
+        background: transparent;
+    }
+    
+    .menu:checked ~ .navbar-hamb-item .navbar-hamb-line::before {
+        transform: rotate(-45deg);
+        top: 10px;
+        left: 10px;
+    }
+    
+    .menu:checked ~ .navbar-hamb-item .navbar-hamb-line::after {
+        transform: rotate(45deg);
+        top: 10px;
+        left: 10px;
+    }
 }
